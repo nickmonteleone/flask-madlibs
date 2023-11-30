@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Madlibs! {% endblock %}
+
+{% block content %}
+
+<h1 class="pt-4 mb-3 text-center">Madlibs!</h1>
+
+<div class="ms-3 me-3">
+  <form action="/prompts" class="pb-4 text-center">
+
+    <select name="story_options" class="mb-4">
+
+      {% for story_option in story_options %}
+      <option value="{{ story_option }}">{{ story_option }}</option>
+      {% endfor %}
+
+    </select>
+
+    <button class="btn btn-primary btn-lg w-100">
+      Select Story!
+    </button>
+  </form>
+</div>
+
+{% endblock %}
