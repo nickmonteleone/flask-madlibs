@@ -49,3 +49,22 @@ def show_result_story(story_option):
         'results.html',
         story_to_display = story_to_display
     )
+
+@app.post('/new-story')
+def create_new_story():
+    """ Take the user's input from homepage and create a new instance of
+        a Story object, which is then used as a template for a madlibs story."""
+
+    story_title = request.form['story_title']
+    story_text = request.form['story_text']
+    print(story_title, story_text)
+
+    story_options[story_title] = story_text
+
+    story_options=story_options.keys()
+
+    return render_template(
+        'dropdown.html',
+        story_title,
+        story_text
+    )

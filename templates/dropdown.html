@@ -21,6 +21,15 @@
       Select Story!
     </button>
   </form>
+  <form action="/new-story" method='POST' class="pb-4 text-center">
+    <p> Make your own story if you want.
+        Use {braces} to create the blanks to be filled. </p>
+    <input name="story_title" placeholder="title of story">
+    <textarea name="story_text" cols="20" rows="10"></textarea>
+    <button class="btn btn-primary btn-lg w-100">
+      Create New Story!
+    </button>
+  </form>
 </div>
 
 {% endblock %}
